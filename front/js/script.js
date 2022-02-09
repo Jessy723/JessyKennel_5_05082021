@@ -15,6 +15,13 @@ getarticles().then((produits) => {
   let lesitems = document.getElementById("items");
   console.log(lesitems);
 
-  lesitems.innerHTML = "salut";
+  lesitems.innerHTML = "Produits";
+
   // Faire une boucle sur les produits, utilisé for //
+
+  for (let article in produits) {
+    let productLink = document.createElement("a");
+    document.querySelector(".items").appendChild(productLink);
+    productLink.href = `product.html?id=${produits[article]._id}`;
+  }
 });
