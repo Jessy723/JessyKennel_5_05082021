@@ -1,9 +1,3 @@
-console.log("article1");
-
-let variable = "article1";
-
-console.log(variable);
-
 // Récupération des produits de l'API //
 
 async function getarticles() {
@@ -15,18 +9,21 @@ getarticles().then((produits) => {
   let lesitems = document.getElementById("items");
   console.log(lesitems);
 
-  lesitems.innerHTML = "Produits";
-
   // Faire une boucle sur les produits, utilisé for //
 
-  for (let article in produits) {
-    let lienproduits = document.createElement("a");
-    document.querySelector(".items").appendChild(lienproduits);
-    lienproduits.href = `product.html?id=${produits[article]._id}`;
+  for (let article of produits) {
+    console.log(article);
+
+    lesitems.innerHTML += `
+    
+    <a href="./product.html?id=${article._id}">
+            <article>
+              <img src="${article.imageUrl}" alt="${article.altTxt}">
+              <h3 class="productName">${article.name}</h3>
+              <p class="productDescription">${article.description}</p>
+            </article>
+          </a>
+          
+    `;
   }
-
-  let produits1 = document.createElement("article");
-  lienproduits.appendChild(produits1);
 });
-
-// test //
