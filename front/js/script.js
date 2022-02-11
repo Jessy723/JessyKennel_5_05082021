@@ -20,8 +20,11 @@ getarticles().then((produits) => {
   // Faire une boucle sur les produits, utilisé for //
 
   for (let article in produits) {
-    let productLink = document.createElement("a");
-    document.querySelector(".items").appendChild(productLink);
-    productLink.href = `product.html?id=${produits[article]._id}`;
+    let lienproduits = document.createElement("a");
+    document.querySelector(".items").appendChild(lienproduits);
+    lienproduits.href = `product.html?id=${produits[article]._id}`;
   }
+
+  let produits1 = document.createElement("article");
+  lienproduits.appendChild(produits1);
 });
