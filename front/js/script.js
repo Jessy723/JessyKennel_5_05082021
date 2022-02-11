@@ -28,3 +28,5 @@ getarticles().then((produits) => {
   let produits1 = document.createElement("article");
   lienproduits.appendChild(produits1);
 });
+
+// test //
