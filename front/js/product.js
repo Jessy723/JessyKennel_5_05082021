@@ -13,12 +13,23 @@ async function getarticle() {
 getarticle().then((produit) => {
   console.log(produit);
 
+  // Description //
+
   const description = document.getElementById("description");
   description.innerHTML = produit.description;
+
+  // Image //
 
   const img = document.querySelector(".item__img");
   img.innerHTML = `<img src="${produit.imageUrl}" alt="${produit.altTxt}">`;
 
+  // Nom produit //
+
   const productName = document.getElementById("title");
   productName.innerHTML = produit.name;
+
+  // Prix produit //
+
+  const productPrice = document.getElementById("price");
+  productPrice.innerHTML = produit.price;
 });
