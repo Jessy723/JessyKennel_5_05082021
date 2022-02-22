@@ -32,4 +32,14 @@ getarticle().then((produit) => {
 
   const productPrice = document.getElementById("price");
   productPrice.innerHTML = produit.price;
+
+  // Couleurs produit //
+
+  for (const colors of produit.colors) {
+    console.table(colors);
+    const productColors = document.createElement("option");
+    document.querySelector("#colors").appendChild(productColors);
+    productColors.value = colors;
+    productColors.innerHTML = colors;
+  }
 });
