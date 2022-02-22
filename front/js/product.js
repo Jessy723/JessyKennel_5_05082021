@@ -18,4 +18,7 @@ getarticle().then((produit) => {
 
   const img = document.querySelector(".item__img");
   img.innerHTML = `<img src="${produit.imageUrl}" alt="${produit.altTxt}">`;
+
+  const productName = document.getElementById("title");
+  productName.innerHTML = produit.name;
 });
