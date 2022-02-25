@@ -52,5 +52,13 @@ getarticle().then((produit) => {
     function addToCart(produit) {
       const btn_envoyerPanier = document.querySelector("#addToCart");
     }
+
+    // Couleur article //
+
+    const choixCouleur = colorPicked.value;
+
+    // Nombre d'articles //
+
+    const choixQuantite = quantityPicked.value;
   });
 });
