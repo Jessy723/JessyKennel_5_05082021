@@ -42,4 +42,15 @@ getarticle().then((produit) => {
     productColors.value = colors;
     productColors.innerHTML = colors;
   }
+
+  // Panier //
+
+  const button = document.getElementById("addToCart");
+  button.addEventListener("click", function () {
+    window.localStorage.panier = JSON.stringify(produit);
+
+    function addToCart(produit) {
+      const btn_envoyerPanier = document.querySelector("#addToCart");
+    }
+  });
 });
